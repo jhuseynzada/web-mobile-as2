@@ -28,6 +28,11 @@ function createProductCard(product) {
     description.textContent = product.description;
     content.appendChild(description);
 
+    const discount = document.createElement("p");
+    discount.classList.add("discount");
+    discount.textContent = `${product.discountPercentage}% off`;
+    content.appendChild(discount);
+
     card.appendChild(content);
     return card;
 }
