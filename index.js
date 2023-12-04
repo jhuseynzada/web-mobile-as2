@@ -33,6 +33,16 @@ function createProductCard(product) {
     discount.textContent = `${product.discountPercentage}% off`;
     content.appendChild(discount);
 
+    // Button to redirect to another page
+    const button = document.createElement("button");
+    button.textContent = "See more";
+    button.classList.add("view-more");
+    button.addEventListener("click", () => {
+        window.location = 'product.html?id='+product.id;
+    });
+
+    content.appendChild(button);
+
     card.appendChild(content);
     return card;
 }
